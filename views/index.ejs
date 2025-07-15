@@ -102,12 +102,15 @@
       padding: 20px;
       border-left: 4px solid #00ffea;
       border-radius: 4px;
-      max-width: 600px;
+      /* max-width: 600px; */
       white-space: pre-wrap;
     }
     .response img {
-      max-width: 100%;
+      /* max-width: 100%; */
+      position: relative;
+      left: 28%;
       margin-top: 10px;
+      width: 26vw;
     }
     .spinner {
       border: 4px solid #333;
@@ -195,13 +198,11 @@
       const history = <%- JSON.stringify(history) %>;
       const item = history[index];
       responseBox.innerHTML = `
-        <div class='response'>
           <h3>Prompt:</h3>
           <p>${item.prompt}</p>
           <h3>Gemini says:</h3>
           <p>${item.response}</p>
-          ${item.imagePath ? `<img src="${item.imagePath}" alt="Generated Image">` : ''}
-        </div>`;
+          ${item.imagePath ? `<img src="${item.imagePath}" alt="Generated Image">` : ''}`;
     }
 
     function toggleSidebar() {
